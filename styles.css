@@ -850,6 +850,12 @@ footer {
     aspect-ratio: 1059 / 2048; /* Based on your actual iPhone frame */
 }
 
+.android-frame {
+    position: relative;
+    width: 240px; /* Adjust this to resize */
+    aspect-ratio: 1059 / 2048; /* Based on your actual iPhone frame */
+}
+
 .frame {
     position: absolute;
     width: 100%;
@@ -886,4 +892,43 @@ footer {
         height: 480px;
     }
 
+}
+
+/* MacBook Showcase Styles */
+.macbook-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.macbook-container {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    transition: transform 0.3s ease;
+}
+
+.macbook-container:hover {
+    transform: translateY(-8px);
+}
+
+.macbook-screen {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .macbook-container {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .macbook-container {
+        max-width: 100%;
+        margin: 0 1rem;
+    }
 }
