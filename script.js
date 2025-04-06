@@ -1,9 +1,61 @@
 // Mobile menu functionality
 const menuBtn = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
+const navLinksItems = document.querySelectorAll('.nav-links a');
 
+// Toggle menu with accessibility
 menuBtn.addEventListener('click', () => {
-    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    const isExpanded = navLinks.classList.contains('active');
+    menuBtn.setAttribute('aria-expanded', !isExpanded);
+    navLinks.classList.toggle('active');
+    document.body.style.overflow = !isExpanded ? 'hidden' : '';
+    
+    // Focus management
+    if (!isExpanded) {
+        navLinksItems[0].focus();
+    }
+});
+
+// Handle keyboard navigation
+navLinks.addEventListener('keydown', (e) => {
+    const focusableElements = Array.from(navLinksItems);
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+    const isTabPressed = e.key === 'Tab';
+    
+    if (!isTabPressed) return;
+
+    if (e.shiftKey) {
+        if (document.activeElement === firstFocusable) {
+            lastFocusable.focus();
+            e.preventDefault();
+        }
+    } else {
+        if (document.activeElement === lastFocusable) {
+            firstFocusable.focus();
+            e.preventDefault();
+        }
+    }
+});
+
+// Close menu when clicking a link
+navLinksItems.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('active') && 
+        !navLinks.contains(e.target) && 
+        !menuBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
 });
 
 // Function to handle smooth scrolling
@@ -12,12 +64,16 @@ function smoothScrollToTarget(targetId) {
     if (target) {
         const navHeight = document.querySelector('.navigation').offsetHeight;
         const targetPosition = target.getBoundingClientRect().top + window.scrollY;
-        const offset = targetId === 'cupboard' ? 20 : 0; // Add a small offset for the work section
+        const offset = targetId === 'cupboard' ? 20 : 0;
         
         window.scrollTo({
             top: targetPosition - navHeight - offset,
             behavior: 'smooth'
         });
+
+        // Set focus to the target section for accessibility
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
     }
 }
 
@@ -29,7 +85,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         smoothScrollToTarget(targetId);
         
         if (window.innerWidth <= 768) {
-            navLinks.style.display = 'none';
+            navLinks.classList.remove('active');
+            menuBtn.setAttribute('aria-expanded', 'false');
         }
     });
 });

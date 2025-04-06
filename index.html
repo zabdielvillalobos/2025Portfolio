@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zab Villalobos - Software Engineer and UX Designer portfolio showcasing human-centered design and development work">
     <title>Zab's Portfolio</title>
     <!-- Preload critical images -->
     <link rel="preload" href="images/logo.png" as="image">
@@ -17,221 +18,230 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navigation">
+    <nav class="navigation" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="logo">
-                <a href="#home">
+                <a href="#home" aria-label="Home">
                     <img src="images/logo.png" alt="Zab Logo" class="nav-logo">
                 </a>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#cupboard">Work</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#home" role="menuitem">Home</a></li>
+                <li role="none"><a href="#cupboard" role="menuitem">Work</a></li>
+                <li role="none"><a href="about.html" role="menuitem">About</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
             </ul>
-            <div class="menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
+            <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="bg-wrap">
-            <div class="blob blob1"></div>
-            <div class="blob blob2"></div>
-            <div class="blob blob3"></div>
-            <div class="blob blob4"></div>
-        </div>           
-        <div class="hero-content">
-            <h1>Zab Villalobos</h1>
-            <p class="animated-sentence">
-                Building experiences that are
-                <span class="words">
-                    <span class="word">inclusive</span>
-                    <span class="word">accessible</span>
-                    <span class="word">human-centered</span>
-                    <span class="word">purpose-driven</span>
-                    <span class="word">intuitive</span>
-                </span>
-            </p>
-            <h4>Currently</h4>
-            <div class="education-info">
-                <p>CS student @ <a href="https://www.cs.unc.edu" target="_blank" class="link-with-arrow">University of North Carolina at Chapel Hill <i class="fas fa-arrow-up"></i></a></p>
-            </div>
-            <div class="internship-info">
-                <p>Incoming Software Engineer Intern @ <a href="https://tech.walmart.com/content/walmart-global-tech/en_us.html" target="_blank" class="link-with-arrow">Walmart <i class="fas fa-arrow-up"></i></a></p>
-            </div>
-            <a href="https://drive.google.com/file/d/1Zb1FGKcOY6axQ-39xMeBcTJ3AtL7q4Dq/view?usp=sharing" class="resume-button" target="_blank">
-                Resume <i>→</i>
-            </a>
-        </div>
-    </section>
-
-    <section id="work">
-        <div class="skills-section">
-            <h3>Experience developing in...</h3>
-            <div class="scroll-container">
-                <div class="scroll-track">
-                    <!-- First set of skills -->
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/swift.png" alt="Swift"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/python.png" alt="Python"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/java.png" alt="Java"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/javascript.png" alt="JavaScript"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/html.png" alt="HTML"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/css.png" alt="CSS"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/mysql.png" alt="SQL"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/c.png" alt="C"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/kotlin.png" alt="Kotlin"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/typescript.png" alt="TypeScript"></div>
-
-                    <!-- Duplicate for smooth loop -->
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/swift.png" alt="Swift"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/python.png" alt="Python"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/java.png" alt="Java"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/javascript.png" alt="JavaScript"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/html.png" alt="HTML"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/css.png" alt="CSS"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/mysql.png" alt="SQL"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/c.png" alt="C"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/kotlin.png" alt="Kotlin"></div>
-                    <div class="skill-card"><img loading="eager" src="images/carouselIcons/typescript.png" alt="TypeScript"></div>
+    <main>
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="bg-wrap" aria-hidden="true">
+                <div class="blob blob1"></div>
+                <div class="blob blob2"></div>
+                <div class="blob blob3"></div>
+                <div class="blob blob4"></div>
+            </div>           
+            <div class="hero-content">
+                <h1 id="hero-title">Zab Villalobos</h1>
+                <p class="animated-sentence" aria-live="polite">
+                    Building experiences that are
+                    <span class="words" aria-label="Rotating words">
+                        <span class="word" aria-hidden="true">inclusive</span>
+                        <span class="word" aria-hidden="true">accessible</span>
+                        <span class="word" aria-hidden="true">human-centered</span>
+                        <span class="word" aria-hidden="true">purpose-driven</span>
+                        <span class="word" aria-hidden="true">intuitive</span>
+                    </span>
+                </p>
+                <h4 id="current-status">Currently</h4>
+                <div class="education-info" aria-labelledby="current-status">
+                    <p>CS student @ <a href="https://www.cs.unc.edu" target="_blank" rel="noopener" class="link-with-arrow">University of North Carolina at Chapel Hill <i class="fas fa-arrow-up" aria-hidden="true"></i></a></p>
                 </div>
-            </div>
-            <h3>Some of my work...</h3>
-        </div>
-        
-        <div class="project-showcase" id="cupboard">
-            <div class="project-content">
-                <h3 class="project-header">Cupboard · Non-Profit Client · 2025</h3>
-                <p class="project-description">A modern product scanning app designed to help pantry workers efficiently track inventory, monitor expiration dates, and streamline the grocery distribution process. Built with a focus on clean design and a user-friendly interface.</p>
-                
-                <div class="project-features">
-                    <span class="feature">Swift</span>
-                    <span class="feature">Vision Kit</span>
+                <div class="internship-info" aria-labelledby="current-status">
+                    <p>Incoming Software Engineer Intern @ <a href="https://tech.walmart.com/content/walmart-global-tech/en_us.html" target="_blank" rel="noopener" class="link-with-arrow">Walmart <i class="fas fa-arrow-up" aria-hidden="true"></i></a></p>
                 </div>
+                <a href="https://drive.google.com/file/d/1Zb1FGKcOY6axQ-39xMeBcTJ3AtL7q4Dq/view?usp=sharing" class="resume-button" target="_blank" rel="noopener" aria-label="Download Resume">
+                    Resume <i aria-hidden="true">→</i>
+                </a>
+            </div>
+        </section>
 
-                <div class="device-showcase">
-                    <div class="iphone-container">
-                        <div class="iphone-frame">
-                            <img src="images/cupboardScreens/cupboardscreen1.png" alt="Cupboard App Screen 1" class="screen" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="iphone-container">
-                        <div class="iphone-frame">
-                            <img src="images/cupboardScreens/cupboardscreen2.png" alt="Cupboard App Screen 2" class="screen" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="iphone-container">
-                        <div class="iphone-frame">
-                            <img src="images/cupboardScreens/cupboardscreen3.png" alt="Cupboard App Screen 2" class="screen" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="iphone-container">
-                        <div class="iphone-frame">
-                            <img src="images/cupboardScreens/cupboardscreen4.png" alt="Cupboard App Screen 2" class="screen" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="iphone-container">
-                        <div class="iphone-frame">
-                            <img src="images/cupboardScreens/cupboardscreen5.png" alt="Cupboard App Screen 2" class="screen" loading="lazy">
-                        </div>
+        <section id="work" aria-labelledby="work-title">
+            <div class="skills-section">
+                <h3 id="skills-title">Experience developing in...</h3>
+                <div class="scroll-container" role="region" aria-label="Skills carousel">
+                    <div class="scroll-track">
+                        <!-- First set of skills -->
+                        <div class="skill-card" role="img" aria-label="Swift programming language"><img loading="eager" src="images/carouselIcons/swift.png" alt="Swift"></div>
+                        <div class="skill-card" role="img" aria-label="Python programming language"><img loading="eager" src="images/carouselIcons/python.png" alt="Python"></div>
+                        <div class="skill-card" role="img" aria-label="Java programming language"><img loading="eager" src="images/carouselIcons/java.png" alt="Java"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/javascript.png" alt="JavaScript"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/html.png" alt="HTML"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/css.png" alt="CSS"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/mysql.png" alt="SQL"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/c.png" alt="C"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/kotlin.png" alt="Kotlin"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/typescript.png" alt="TypeScript"></div>
+
+                        <!-- Duplicate for smooth loop -->
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/swift.png" alt="Swift"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/python.png" alt="Python"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/java.png" alt="Java"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/javascript.png" alt="JavaScript"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/html.png" alt="HTML"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/css.png" alt="CSS"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/mysql.png" alt="SQL"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/c.png" alt="C"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/kotlin.png" alt="Kotlin"></div>
+                        <div class="skill-card"><img loading="eager" src="images/carouselIcons/typescript.png" alt="TypeScript"></div>
                     </div>
                 </div>
+                <h3 id="work-title">Some of my work...</h3>
             </div>
-        </div>
+            
+            <div class="project-showcase" id="cupboard" role="article" aria-labelledby="cupboard-title">
+                <div class="project-content">
+                    <h3 id="cupboard-title" class="project-header">Cupboard · Non-Profit Client · 2025</h3>
+                    <p class="project-description">A modern product scanning app designed to help pantry workers efficiently track inventory, monitor expiration dates, and streamline the grocery distribution process. Built with a focus on clean design and a user-friendly interface.</p>
+                    
+                    <div class="project-features" role="list" aria-label="Project technologies">
+                        <span class="feature" role="listitem">Swift</span>
+                        <span class="feature" role="listitem">Vision Kit</span>
+                    </div>
 
-        <div class="project-showcase" id="roam">
-            <div class="project-content">
-                <h3 class="project-header">Roam · Founder · 2025</h3>
-                <p class="project-description">A minimalist travel logging app for tracking bars, restaurants, and hidden gems you've visited or wish to explore. Designed to be sleek, personal, and effortless to use. Inspired by <a href="https://letterboxd.com/" target="_blank" class="link-with-arrow">Letterboxd</a>.</p>
-                
-                <div class="project-features">
-                    <span class="feature">Kotlin</span>
-                    <span class="feature">Firebase</span>
-                    <span class="feature">Google Places API</span>
-                </div>
-
-                <div class="device-showcase">
-                    <div class="iphone-container">
-                        <div class="android-frame">
-                            <img src="images/roamScreens/roamscreen1.png" alt="Roam App Screen 1" class="screen" loading="lazy">
+                    <div class="device-showcase" role="region" aria-label="Project screenshots">
+                        <div class="iphone-container">
+                            <div class="iphone-frame">
+                                <img src="images/cupboardScreens/cupboardscreen1.png" alt="Cupboard App Screen 1" class="screen" loading="lazy">
+                            </div>
                         </div>
-                    </div>
-                    <div class="iphone-container">
-                        <div class="android-frame">
-                            <img src="images/roamScreens/roamscreen2.png" alt="Roam App Screen 2" class="screen" loading="lazy">
+                        <div class="iphone-container">
+                            <div class="iphone-frame">
+                                <img src="images/cupboardScreens/cupboardscreen2.png" alt="Cupboard App Screen 2" class="screen" loading="lazy">
+                            </div>
                         </div>
-                    </div>
-                    <div class="iphone-container">
-                        <div class="android-frame">
-                            <img src="images/roamScreens/roamscreen3.png" alt="Roam App Screen 3" class="screen" loading="lazy">
+                        <div class="iphone-container">
+                            <div class="iphone-frame">
+                                <img src="images/cupboardScreens/cupboardscreen3.png" alt="Cupboard App Screen 2" class="screen" loading="lazy">
+                            </div>
                         </div>
-                    </div>
-                    <div class="iphone-container">
-                        <div class="android-frame">
-                            <img src="images/roamScreens/roamscreen4.png" alt="Roam App Screen 4" class="screen" loading="lazy">
+                        <div class="iphone-container">
+                            <div class="iphone-frame">
+                                <img src="images/cupboardScreens/cupboardscreen4.png" alt="Cupboard App Screen 2" class="screen" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="iphone-container">
+                            <div class="iphone-frame">
+                                <img src="images/cupboardScreens/cupboardscreen5.png" alt="Cupboard App Screen 2" class="screen" loading="lazy">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="project-showcase" id="csxl">
-            <div class="project-content">
-                <h3 class="project-header">UNC CSXL Roster System · 2024</h3>
-                <p class="project-description">A comprehensive roster management system for University of North Carolina's Computer Science Experience Labs, streamlining organization management with an intuitive interface.</p>
-                
-                <div class="project-features">
-                    <span class="feature">Python</span>
-                    <span class="feature">TypeScript</span>
-                    <span class="feature">PostgreSQL</span>
-                    <span class="feature">FastAPI</span>
-                    <span class="feature">HTML</span>
-                    <span class="feature">CSS</span>
-                </div>
+            <div class="project-showcase" id="roam">
+                <div class="project-content">
+                    <h3 class="project-header">Roam · Founder · 2025</h3>
+                    <p class="project-description">A minimalist travel logging app for tracking bars, restaurants, and hidden gems you've visited or wish to explore. Designed to be sleek, personal, and effortless to use. Inspired by <a href="https://letterboxd.com/" target="_blank" class="link-with-arrow">Letterboxd</a>.</p>
+                    
+                    <div class="project-features">
+                        <span class="feature">Kotlin</span>
+                        <span class="feature">Firebase</span>
+                        <span class="feature">Google Places API</span>
+                    </div>
 
-                <div class="macbook-showcase">
-                    <div class="macbook-container">
-                        <img src="images/CSXLImages/csxlmacbookscreen.png" alt="CSXL Roster System Screenshot" class="macbook-screen" loading="lazy">
+                    <div class="device-showcase">
+                        <div class="iphone-container">
+                            <div class="android-frame">
+                                <img src="images/roamScreens/roamscreen1.png" alt="Roam App Screen 1" class="screen" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="iphone-container">
+                            <div class="android-frame">
+                                <img src="images/roamScreens/roamscreen2.png" alt="Roam App Screen 2" class="screen" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="iphone-container">
+                            <div class="android-frame">
+                                <img src="images/roamScreens/roamscreen3.png" alt="Roam App Screen 3" class="screen" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="iphone-container">
+                            <div class="android-frame">
+                                <img src="images/roamScreens/roamscreen4.png" alt="Roam App Screen 4" class="screen" loading="lazy">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <div class="contact-content">
-                <p class="contact-subtitle">Recruiter? Student? Curious stalker? No judgment, I'd love to connect!</p>
-                
-                <div class="contact-links">
-                    <div class="contact-section">
-                        <h4>Email</h4>
-                        <a href="mailto:zabdielv@unc.edu" class="contact-link">zabdielv@unc.edu<i class="fas fa-arrow-up"></i></a>
+            <div class="project-showcase" id="csxl">
+                <div class="project-content">
+                    <h3 class="project-header">UNC CSXL Roster System · 2024</h3>
+                    <p class="project-description">A comprehensive roster management system for University of North Carolina's Computer Science Experience Labs, streamlining organization management with an intuitive interface.</p>
+                    
+                    <div class="project-features">
+                        <span class="feature">Python</span>
+                        <span class="feature">TypeScript</span>
+                        <span class="feature">PostgreSQL</span>
+                        <span class="feature">FastAPI</span>
+                        <span class="feature">HTML</span>
+                        <span class="feature">CSS</span>
                     </div>
 
-                    <div class="contact-section">
-                        <h4>Socials</h4>
-                        <a href="https://github.com/zabdielvillalobos" target="_blank" class="contact-link">GitHub <i class="fas fa-arrow-up"></i></a>
-                        <a href="https://www.linkedin.com/in/zabv/" target="_blank" class="contact-link">LinkedIn <i class="fas fa-arrow-up"></i></a>
-                        <a href="https://www.instagram.com/zabdielx/" target="_blank" class="contact-link">Instagram <i class="fas fa-arrow-up"></i></a>
-                    </div>
-
-                    <div class="contact-section">
-                        <h4>Location</h4>
-                        <p class="location-text">School 📚 - Chapel Hill, NC</p>
-                        <p class="location-text">Home 🏠 - San Antonio, TX</p>
-                        <p class="location-text">Dream ☁️ - Austin, TX</p>
+                    <div class="macbook-showcase">
+                        <div class="macbook-container">
+                            <img src="images/CSXLImages/csxlmacbookscreen.png" alt="CSXL Roster System Screenshot" class="macbook-screen" loading="lazy">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
+        <section id="contact" class="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 id="contact-title">Contact</h2>
+                <div class="contact-content">
+                    <p class="contact-subtitle">Recruiter? Student? Curious stalker? No judgment, I'd love to connect!</p>
+                    
+                    <div class="contact-links">
+                        <div class="contact-section">
+                            <h4 id="email-title">Email</h4>
+                            <a href="mailto:zabdielv@unc.edu" class="contact-link" aria-labelledby="email-title">
+                                zabdielv@unc.edu<i class="fas fa-arrow-up" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <div class="contact-section">
+                            <h4 id="socials-title">Socials</h4>
+                            <a href="https://github.com/zabdielvillalobos" target="_blank" rel="noopener" class="contact-link" aria-labelledby="socials-title">
+                                GitHub <i class="fas fa-arrow-up" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/zabv/" target="_blank" rel="noopener" class="contact-link" aria-labelledby="socials-title">
+                                LinkedIn <i class="fas fa-arrow-up" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.instagram.com/zabdielx/" target="_blank" rel="noopener" class="contact-link" aria-labelledby="socials-title">
+                                Instagram <i class="fas fa-arrow-up" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <div class="contact-section">
+                            <h4 id="location-title">Location</h4>
+                            <p class="location-text" aria-labelledby="location-title">School 📚 - Chapel Hill, NC</p>
+                            <p class="location-text" aria-labelledby="location-title">Home 🏠 - San Antonio, TX</p>
+                            <p class="location-text" aria-labelledby="location-title">Dream ☁️ - Austin, TX</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
         <div class="container">
             <p>&copy; 2025 Zab Villalobos. All rights reserved.</p>
         </div>
