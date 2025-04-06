@@ -1,10 +1,6 @@
 current iteration: 
 
-
-https://github.com/user-attachments/assets/8213024e-bf63-4806-9041-3f1c1acc0dad
-
-
-
+https://zabv.me/
 
 first iteration:
 
