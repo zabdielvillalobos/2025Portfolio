@@ -607,8 +607,14 @@ h2 {
 
 /* Contact Section */
 .contact {
-    padding: 6rem 2rem;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #ffffff;
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    scroll-margin-top: 100px;
+}
+
+#contact {
+    scroll-margin-top: 100px;
 }
 
 .contact-content {
@@ -1256,4 +1262,95 @@ footer {
     padding: 0 2rem;
     overflow: hidden;
     background-color: #ffffff; /* keep it clean */
+}
+
+/* Base image styles */
+img {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    will-change: opacity, transform;
+}
+
+img.loading {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+/* Skill card improvements */
+.skill-card {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s ease-out;
+    will-change: transform, box-shadow;
+    backface-visibility: hidden;
+}
+
+.skill-card img {
+    opacity: 1;
+    max-height: 45px;
+    max-width: 80%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Project showcase images */
+.screen {
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    will-change: opacity;
+}
+
+.screen.loading {
+    opacity: 0;
+}
+
+/* Floating icons */
+.floating-icon {
+    opacity: 1;
+    visibility: visible;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+/* Ensure animations run smoothly */
+.scroll-track {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+/* Prevent FOUC (Flash of Unstyled Content) */
+.hero-content,
+.about-content,
+.project-card,
+.contact-content {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 1s ease-out;
+    will-change: opacity, transform;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optimize animation performance */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
