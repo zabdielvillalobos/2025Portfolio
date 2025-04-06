@@ -609,120 +609,85 @@ h2 {
 .contact {
     background-color: #ffffff;
     padding: 6rem 2rem 4rem;
+}
+
+.contact h2 {
     text-align: center;
-    scroll-margin-top: 100px;
-}
-
-#contact {
-    scroll-margin-top: 100px;
-}
-
-.contact-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.contact-heading {
-    font-size: 4rem;
-    color: #1d1d1f;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 .contact-subtitle {
-    font-size: 1.2rem;
+    text-align: center;
     color: #86868b;
-    margin-bottom: 4rem;
-    line-height: 1.4;
+    margin-bottom: 3rem;
 }
 
 .contact-links {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .contact-section {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    text-align: left;
 }
 
 .contact-section h4 {
-    font-size: 1rem;
-    color: #86868b;
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    font-size: 1.2rem;
+    color: #1d1d1f;
+    margin-bottom: 1rem;
+    text-align: left;
 }
 
 .contact-link {
-    color: #1d1d1f;
+    display: block;
+    color: #0066cc;
     text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
 .contact-link i {
     margin-left: 0.5rem;
-    font-size: 0.8em;
-    transition: all 0.3s ease;
-    position: relative;
-    top: -1px;
+    font-size: 0.8rem;
     transform: rotate(45deg);
-    opacity: 0;
+    transition: transform 0.3s ease;
 }
 
 .contact-link:hover {
-    color: #0066cc;
+    color: #004499;
 }
 
 .contact-link:hover i {
-    opacity: 1;
-    transform: translate(3px, -3px) rotate(45deg);
+    transform: rotate(45deg) translate(2px, -2px);
 }
 
 .location-text {
-    font-size: 1.2rem;
-    color: #1d1d1f;
-    font-weight: 500;
+    color: #86868b;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    text-align: left;
 }
 
 @media (max-width: 768px) {
-    .hero h1, .contact-heading {
-        font-size: 2.5rem;
-    }
-    
-    .hero p, .contact-subtitle, .contact-link, .location-text, .education-info p, .internship-info p {
-        font-size: 1.1rem;
-    }
-    
-    .current-status, .contact-section h4 {
-        font-size: 0.9rem;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .about-content,
-    .contact-content {
+    .contact-links {
         grid-template-columns: 1fr;
+        gap: 3rem;
     }
-
-    .skills-section {
-        padding: 4rem 1rem 1.5rem;
+    
+    .contact-section {
+        text-align: center;
     }
-
-    .project-showcase {
-        padding: 2rem 1rem;
+    
+    .contact-section h4 {
+        text-align: center;
+    }
+    
+    .location-text {
+        text-align: center;
     }
 }
 
