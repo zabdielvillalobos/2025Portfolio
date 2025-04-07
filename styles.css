@@ -80,6 +80,10 @@ body {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    color: #1d1d1f;
 }
 
 .hero {
@@ -383,7 +387,7 @@ body {
 
     .hero {
         flex-direction: column;
-        padding: 2rem;
+        padding: 6rem 2rem 2rem;
         overflow: visible;
     }
 
@@ -405,6 +409,33 @@ body {
 
     .hero p {
         font-size: 1.2rem;
+    }
+
+    .nav-container {
+        padding: 1rem 2rem;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        padding: 1rem 0;
+        gap: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 }
 
