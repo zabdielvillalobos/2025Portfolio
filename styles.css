@@ -142,7 +142,7 @@ body {
     align-items: center;
 }
 
-.current-status {
+.current-status, .previous-status {
     font-size: 1rem;
     color: #86868b;
     margin-bottom: 0.5rem;
